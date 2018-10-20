@@ -22,16 +22,34 @@ O Princípio da Indução e suas Aplicações
 
 \begin{abstract}
 
-Neste trabalho mostraremos diversas utilizações do princípio de indução em Ciência da Computação.
+Neste trabalho mostraremos diversas utilizações do princípio de indução em Ciência da Computação, por meio da solução de dois probelmas propostos.
 
 \end{abstract}
 
 \section{Introdução}
 
-Indução é um princípio importante...
+O trabalho será divido em duas partes, que serão respectivamente a solução do primeiro problema e a solução do segundo problema. 
 
-\section{Indução Estrutural}
+\section{Problema 1:}
 
-\section{Conclusão}
+Prove a equivalência entre os princípios da indução forte (PIF) e da indução matemática (PIM).
+
+
+
+\section{Problema 2:}
+
+Provar a correção do algoritmo de ordenação de listas conhecido como \textit {insertion sort}, ou ordenação por inserção.
+O pseudocódigo deste algoritmo é dado a seguir:\\
+
+$\textit{InsertionSort(l)}=\begin{cases}
+l,& \text{se l = []},\\
+\textit{Insert(h,InsertionSort(l`))},& \text{se l = h :: l`}
+\end{cases}$
+
+$\textit{Insert(x,l)}=\begin{cases}
+x :: [],& \text{se l = []},\\
+x ::l,& \text{se l = h :: l` e $x \leq h$}
+\end{cases}$
+
 
 \end{document}
