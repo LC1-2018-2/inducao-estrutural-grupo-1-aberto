@@ -28,11 +28,131 @@ Neste trabalho mostraremos diversas utilizações do princípio de indução em 
 
 \section{Introdução}
 
-O trabalho será divido em duas partes, que serão respectivamente a solução do primeiro problema e a solução do segundo problema. 
+O trabalho será divido em tres partes, que serão respectivamente a solução dos exercícios, do primeiro problema e a solução do segundo problema. 
+
+\section{Exercícios}
+1.Prove: \\
+a) $n^2 < 2^n$, para $n \geq 5$ \\
+\textbf{Prova por indução:} \\
+a.\textbf{Base da indução:} a propriedade tem que ser verdadeira para o primeiro número da condição($n \geq 5$), que é o 5. \\
+
+$P(5) = 5^2 < 2^5 \Longrightarrow{} 25 < 32$, que é trivialmente verdadeiro.\checkmark \\
+
+\noindent A partir disso iremos para o proximo passo da nossa prova, o \textbf{passo indutivo}, nele assumimos a \textbf{hipótese indutiva}($P(n)$ como verdadeira, a fim de provar P(n+1).Desta maneira: \\
+
+$P(n+1): (n+1)^2 < 2^{(n+1)} \Longrightarrow n^2+2n+1 < 2*2^n \Longrightarrow n^2+2n+1<2^n + 2^n$ \\ \\
+Por hipotese de indução: $n^2 < 2^n \Longrightarrow n^2 + \textbf{2n+1} < 2^n + \textbf{2n+1}$. \\
+Por tanto: consideramos substituir $n^2+2n+1$ por $2^n+2n+1$.  \\
+Obtemos: $2^n+2n+1 < 2^n+2^n \Longleftrightarrow 2n+1 < 2^n$.  \\
+Por isso  $n^2+2n+1  < 2^{n+1}$ \textbf{pois} $2^n+2n+1  < 2^{n+1} $,provando que a propriedade vale para P(n+1).\checkmark\\ 
+
+\newpage
+
+\noindent b) $n! > 2n$, para $n\geq 4$
+{Prova por indução:} \\
+
+\noindent a. {Base da indução:} a propriedade tem que ser verdadeira para o primeiro número da condição($n\geq4$), que é o 5. \checkmark\\
+$P(4) = 4! > 2*4 \Longleftrightarrow 2*4>8$
+A partir disso iremos para o proximo passo da nossa prova, o {passo indutivo}, nele assumimos a {hipótese indutiva}(P(n) como verdadeira, a fim de provar P(n+1).\\
+Desta maneira: $P(n+1) = (n+1)!>2(n+1)$ \\ 
+$=n!(n+1)>2(n+1)$ já que: $n! > 2$ para $n \geq 4$ \\
+A prova é verdadeira.\checkmark\\ 
+\\
+
+\noindent c)  $\forall n \in \mathbb{N}$, $(n^3-n)$ é divisivel por 3.  \\
+$(n^3 - n) = \mathbb{N}$.\\
+
+\noindent a. Base indutiva: \\
+$P(0) = (0^3 - 0)/3 = \mathbb{N}$\checkmark\\
+
+\noindent b.Passo indutivo: Hipotese de indução:P(n) =$(n^3 - n)/3 = \mathbb{N}$ , logo P(n+1) = T? \\
+
+$P(n+1) = [(n+1)^3 - (n+1)]/3 = \mathbb{N}$ \\
+
+$P(n+1) = [n^3 - 3n^2 + 3n + 1 - (n+1)]/3 = \mathbb{N}$ \\
+
+$P(n+1) = (n^3 - n + 3n^2 + 3n)/3 = \mathbb{N}$ \\
+
+$P(n+1) =(n^3 - n)/3 + n^2 + n = \mathbb{N}$ \\
+
+\noindent Ora, $P(n) =(n^3 - n)/3$ é nossa Hipotese de indução e sabemos que ela é $\mathbb{N}$, $(n^2 + n) $ tambem resulta em um $\mathbb{N}$, portanto soma de $\mathbb{N}$ resulta em $\mathbb{N}$. \\
+A prova é verdadeira. \checkmark\\
+\\ 
+
+
+\noindent d)"A Soma dos primeiros n primeiros numeros impares = $2n-1$" \\
+ $1+3+...+(2n-1)$ é uma PA de $r=2$. \\
+ 
+ Soma PA = $(a_1 + a_n)n/2$ \\
+ 
+\noindent a. Base da indução: $P(1)= (1+1)1/2 = 1 = (2*1) - 1$ \checkmark \\
+
+\noindent b.Passo indutivo: Hipotese de indução: $P(n) = (a_1 + a_n)n/2 $ \\
+
+$P(n+1) = {1+[1+((n+1)-1)2](n+1)} = (n+1)^2$ \\
+
+$P(n+1) = [1+2n+1](n+1)/2 = (n+1)^2$ \\
+
+$P(n+1) = 2[n+1](n+1)/2 = (n+1)^2$ \\
+
+$P(n+1) = (n+1)^2 = (n+1^2)$  \checkmark 
+
+
+
+\noindent f)\\ 
+            $a_0 := 0$ \\
+            $a_1 := 1$ \\
+            $a_{i+2} := 2a_{i+1} - a_i$\\
+            
+            Hipotese de indução:\\
+                                $a_n = 0, n=0$\\ 
+                                $a_n = 1, n=1$\\
+                                $a_n = 2(n-1)-(n-2)$, se $n\geq2$\\
+    base da indução:\\
+                    $a_1$ e $a_2$ \checkmark \\
+                    \\
+                    $a_2 = 2*(2-1)-(2-2) = 2 = 2a_1(2) - a_0(0)$\checkmark\\
+                    \\
+    passo indutivo: \\
+                    $P(n+1) = 2(n+1-1)-(n+1-2) = 2a_n - a_{n-1}$\\
+                    $2n - (n-1) = 2[2(n-1)-(n-2)] - [2(n-1-1)-(n-1-2)]$\\
+                    $2n - (n-1) = 2[(2n-2)-(n-2)] - [2(n-2)-(n-3)]$\\
+                    $2n-n+1 = 2(n)-[2n-4-n+3]$\\
+                    $n+1 = 2n - (n-1)$\\
+                    $n+1 = n+1$\checkmark\\
+    
+\noindent 2)"Todo numero natural $\geq2$ pode ser escrito como produto de primos"\\
+De fato não consegui usar o produtório como hipótese de indução.
+proponho uma outra, nela H.I.: $a*b =$ a qualquer número natural $\geq2$, sendo a e b produtos de números primos ou propriamente números primos.[Entre 2,n]\\
+
+\centering{
+$1<a<n$\\
+$1<b<n$\\}
+\raggedright
+base indutiva: $2 = 2$(A base indutiva é simplesmente o primeiro primo $\geq2$ que pode ser escrito sozinho.)\checkmark\\
+passo indutivo: Existem duas situações para P(n+1).\\
+Na primeira n+1 é primo e assim como caso base, $n+1 = n+1$\checkmark\\
+Na segunda situação n+1 não é primo, portanto\\
+
+$n+1 = a*b$ ,[ $1<a<(n+1)$ ; $1<b<(n+1)$], pois n+1 não é primo então tem mais algum divisor diferente dele e 1.\\
+portanto a e b estão entre [2,n] e são produto de primos ou primos.
+concluimos que n+1 = produto de primos(ou primo$^1$) * produto de primos($^1$) = produto de primos.\\
+É aqui que a ideia de Indução Forte entra, o fato da hipotese de indução generalizar para todos os casos entre [2,n] nos permite 
+aplicar a propriedade para n+1, a indução matemática neste caso não seria suficiente.
+
+\newpage
 
 \section{Problema 1:}
 
-Prove a equivalência entre os princípios da indução forte (PIF) e da indução matemática (PIM).
+Prove a equivalência entre os princípios da indução forte (PIF) e da indução matemática (PIM).\bigskip
+
+Para provar essa equivalência começo apontando que a literatura nos diz que a indução Forte é uma variação da indução matemática e utilizada onde esta não abrange algum desafio matemático. Ou seja se fosse representado em um diagrama de Venn a indução Forte seria um circulo maior e dentro deste estaria contido um circulo menor, a indução matemática, a relação seria sobre qual sistema abrange mais provas.\\
+
+
+O caso base dos dois métodos é semelhante e trivialmente equivalentes.\checkmark\\
+
+Passo indutivo: Uma propriedade P vale para todos numeros entre [1,n] e então vale para n+1(Como vimos no caso dos primos), se vale para todos incluindo n, então P(n) = Verdadeiro e por consequentemente P(n+1) = Também é verdadeiro.Logo são equivalentes, quando PIF prova um problema, dentro da hipotese está o PIM.\checkmark
+
 
 
 
