@@ -15,7 +15,7 @@
 O Princípio da Indução e suas Aplicações
 }
 
-\author{Flávio L. C. de Moura}
+\author{Leonardo R. do Nascimento\\ Eduardo F. Fernandes}
 
 \begin{document}
 \maketitle
@@ -161,15 +161,52 @@ Passo indutivo: Uma propriedade P vale para todos numeros entre [1,n] e então v
 Provar a correção do algoritmo de ordenação de listas conhecido como \textit {insertion sort}, ou ordenação por inserção.
 O pseudocódigo deste algoritmo é dado a seguir:\\
 
+\begin{center}
 $\textit{InsertionSort(l)}=\begin{cases}
 l,& \text{se l = []},\\
 \textit{Insert(h,InsertionSort(l`))},& \text{se l = h :: l`}
 \end{cases}$
-
+\end{center}
+\begin{center}
 $\textit{Insert(x,l)}=\begin{cases}
 x :: [],& \text{se l = []},\\
 x ::l,& \text{se l = h :: l` e $x \leq h$}
 \end{cases}$
+\end{center}
+
+
+\textbf{Solução} : 
+Para provar que o algoritmo \textit{InsertionSort(l)} ordena corretamente uma lista, primeiramente temos que definir uma função que verifica a ordenação de uma lista qualquer, e posteriormente verificar se essa função retorna verdade para qualquer lista l aplicada na função InsrtionSort(l) por meio de indução na estrutura de l.\\
+
+\begin{center}
+$\textit{isSorted(l)}=\begin{cases}
+true,& \text{se l = [] ou se l = h::[]},\\
+\textit{isSorted(l`)},& \text{se $h \leq car(l`)$}\\
+false,& \text{else}
+\end{cases}$
+\end{center}
+
+\textbf{Indução estrutural em l} :
+
+Base da Indução (BI): \\
+l = [] (lista vazia) :\\
+\ \ \ isSorted(InsertionSort(l)) $\stackrel{\text{inst}}{=}$ isSorted(InsertionSort([])) $\stackrel{\text{def}}{=}$ isSorted([]) $\stackrel{\text{def}}{=}$ true \checkmark\\~\\
+
+Passo Indutivo (PI): Provar que isSorted(InsertionSort(l)) = true\\
+Hipótese de Indução (HI): isSorted(InsertionSort(l`)) = true\\~\\
+
+l = h :: l` :\\
+\ \ \ 
+isSorted(InsertionSort(h :: l)) $\stackrel{\text{def}}{=}$ isSorted(Insert(h, \underline{InsertionSort(l`)}))\\~\\
+
+Pela hipótese de indução sabemos que a lista sublinhada já está ordenada, nos resta avaliar a função Insert. Ficaremos então com dois casos possiveis\\~\\
+\newpage
+
+caso 1 : se l` = x :: xs e $h \leq x$ :\\
+Pela definição de Insert, Insert(h, InsertionSort(l`))) retornará uma lista ordenada \checkmark\\~\\
+
+caso 2 se l' = x :: xs e $h \geq x$ :\\
+Nesse caso, onde h é maior que o primeiro elemento da lista l', não há, na definição da função Insert um tratamento para específico para este caso. Portanto temos um caso indefinido. Concluimos assim que o algoritmo de ordenação insertion sort é incompleto.
 
 
 \end{document}
